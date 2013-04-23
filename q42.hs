@@ -24,4 +24,11 @@ dist a b
 	  lab = length a - length b
           min3 x y z = if x < y then x else min y z
 
+answers :: String -> [String]
+answers raw = filter (\x -> length x > 2) $ lines raw
 
+mat :: [String] -> [[String]]
+
+main =
+  do raw <- readFile "/tmp/q42"
+     print $ answers raw
